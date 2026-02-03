@@ -1,0 +1,28 @@
+# Maven
+target/
+
+# Compiled class files
+*.class
+
+# Eclipse
+.settings/
+.classpath
+.project
+
+# IntelliJ IDEA
+# Ignore most .idea files, but keep some for team sharing
+.idea/*
+!.idea/compiler.xml
+!.idea/encodings.xml
+!.idea/misc.xml
+!.idea/vcs.xml
+!.idea/runConfigurations/
+
+*.iml
+*.iws
+*.ipr
+out/
+
+# OS
+.DS_Store
+Thumbs.db

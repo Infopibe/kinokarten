@@ -99,7 +99,7 @@ public class App
                         int terminNrCase3 = tryConvertStringToInt(terminNrTextCase3);
 
                         //Hier prüfen, dass die TerminNr überhaupt gültig ist
-                        if(terminNrCase3 > alleTermineCase3.size()){
+                        if(terminNrCase3 > alleTermineCase3.size() || terminNrCase3 <= 0){
                             System.out.println("Index out of bounds!");
                             abbruch = true;
                             break;
@@ -122,7 +122,7 @@ public class App
                         int terminNrCase4 = tryConvertStringToInt(terminNrTextCase4);
 
                         //Hier prüfen, dass die TerminNr überhaupt gültig ist
-                        if(terminNrCase4 > alleTermineCase4.size()){
+                        if(terminNrCase4 > alleTermineCase4.size() || terminNrCase4 <= 0){
                             System.out.println("Index out of bounds!");
                             abbruch = true;
                             break;
@@ -143,7 +143,7 @@ public class App
                                 System.out.println("Plaetze konnten nicht reserviert werden! Abbruch? Y/N");
                                 stopSuche = System.console().readLine().toUpperCase().equals("Y");
                             } else {
-                                System.out.println("Sitzplaetze ferfügbar! Wollen Sie die Sitzplätze reservieren? Y/N");
+                                System.out.println("Sitzplaetze verfügbar! Wollen Sie die Sitzplätze reservieren? Y/N");
                                 stopSuche = System.console().readLine().toUpperCase().equals("Y");
                                 
                                 //Erzeugung eines neuen Kunden                        
@@ -307,15 +307,15 @@ public class App
                 int saalNr = tryConvertStringToInt(saalNrText);
 
                 Saal saal = kinoManager.get_saalManager().get_saal(saalNr);
-                boolean abbruch = true;
+                boolean abbruch = false;
                 if(saal == null)
                 {
-                    abbruch = false;
+                    abbruch = true;
                 } else {                    
                     Termin neuTermin = kinoManager.get_saalManager().addFilmToSaal(film, localDateTime, saal);
                     if(neuTermin == null){
                         System.out.println( "Termin konnte nicht angelegt werden!");
-                        abbruch = false;
+                        abbruch = true;
                     }
                 }
                 return abbruch;
