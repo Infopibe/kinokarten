@@ -100,4 +100,4 @@ Unit tests are located in `src/test/java`. Run them using:
 
 ## License
 
-Educational project - Rhine-Waal University of Applied Sciences (RFH)
+Educational project
